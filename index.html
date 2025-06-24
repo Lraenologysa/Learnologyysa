@@ -1,67 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Learnology</title>
+  <meta charset="UTF-8" />
+  <title>Expert Research Editing</title>
   <style>
+    html { scroll-behavior: smooth; }
     body {
       background-color: #f8eded;
       color: #379777;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
-
     nav {
       background-color: #ffffff;
-      padding: 20px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
     }
-
     nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       justify-content: center;
       gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-
     nav a {
       color: #379777;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
     }
+    nav a:hover { text-decoration: underline; }
 
-    nav a:hover {
-      text-decoration: underline;
+    /* Hero section */
+    #home {
+      padding: 150px 20px 80px;
+      text-align: center;
+      background-image: url(''); /* Add hero image later */
+      background-size: cover;
+      background-position: center;
+    }
+    #home h1 {
+      font-size: 36px;
+      color: black;
+      margin-bottom: 20px;
+    }
+    #home p {
+      font-size: 18px;
+      color: black;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.5;
     }
 
-    .main-title {
-      margin-top: 150px;
+    /* What We Offer */
+    #offers {
+      padding: 80px 20px;
     }
-
-    .main-title h1 {
-      font-size: 60px;
+    #offers h2 {
       color: #379777;
-      letter-spacing: 3px;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    #offers ul {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    #offers li {
+      font-size: 16px;
+      margin: 10px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+    #offers li::before {
+      content: '✔️';
+      position: absolute;
+      left: 0;
+    }
+
+    /* Other sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    section h2 {
+      color: #379777;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <ul>
-      <li><a href="#">Submit Research</a></li>
-      <li><a href="#">Publish</a></li>
-      <li><a href="#">Wall of Supporters</a></li>
-      <li><a href="#">About Us</a></li>
+      <li><a href="#submit">Submit Research</a></li>
+      <li><a href="#publish">Publish</a></li>
+      <li><a href="#supporters">Wall of Supporters</a></li>
+      <li><a href="#about">About Us</a></li>
     </ul>
   </nav>
 
-  <div class="main-title">
-    <h1>LEARNOLOGY</h1>
-  </div>
+  <section id="home">
+    <h1>Expert Research Editing for Academic Excellence</h1>
+    <p>
+      Professional editing services tailored for undergraduate and graduate students.
+      Enhance your research with our expert guidance across all academic fields.
+    </p>
+  </section>
+
+  <section id="offers">
+    <h2>What We Offer</h2>
+    <ul>
+      <li>Professional editing and proofreading</li>
+      <li>Structure, grammar, and academic tone assistance</li>
+      <li>Feedback on clarity, logic, and flow</li>
+      <li>Quick turnaround for urgent submissions</li>
+      <li>Support for theses, proposals, essays, and journal articles</li>
+    </ul>
+  </section>
+
+  <section id="submit">
+    <h2>Submit Research</h2>
+    <p>Upload your research paper or essay here.</p>
+    <!-- Upload form goes here -->
+  </section>
+
+  <section id="publish">
+    <h2>Publish</h2>
+    <p>Publish your ideas and research findings with us.</p>
+  </section>
+
+  <section id="supporters">
+    <h2>Wall of Supporters</h2>
+    <p>Thank you to all who support our academic community.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      We are dedicated to empowering students by helping them refine and elevate their research
+      to academic excellence through expert feedback and editorial services.
+    </p>
+  </section>
+
 </body>
 </html>
