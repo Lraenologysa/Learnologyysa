@@ -6,98 +6,103 @@
   <style>
     html { scroll-behavior: smooth; }
     body {
-      background-color: #f8eded;
-      color: #379777;
+      background-color: #f8efef;
+      color: #000;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
     nav {
-      background-color: #ffffff;
+      background: #f8efef;
       padding: 15px 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0; z-index: 10;
     }
     nav ul {
       display: flex;
       justify-content: center;
       gap: 40px;
       list-style: none;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
     }
     nav a {
-      color: #379777;
+      color: #187859;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
     }
     nav a:hover { text-decoration: underline; }
-
-    /* Hero section */
-    #home {
-      padding: 150px 20px 80px;
-      text-align: center;
-      background-image: url(''); /* Add hero image later */
-      background-size: cover;
-      background-position: center;
-    }
-    #home h1 {
-      font-size: 36px;
-      color: black;
-      margin-bottom: 20px;
-    }
-    #home p {
-      font-size: 18px;
-      color: black;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    /* What We Offer */
-    #offers {
-      padding: 80px 20px;
-    }
-    #offers h2 {
-      color: #379777;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    #offers ul {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0;
-    }
-    #offers li {
-      font-size: 16px;
-      margin: 10px 0;
-      padding-left: 24px;
-      position: relative;
-    }
-    #offers li::before {
-      content: '✔️';
-      position: absolute;
-      left: 0;
-    }
-
-    /* Other sections */
     section {
       padding: 80px 20px;
       text-align: center;
     }
-    section h2 {
-      color: #379777;
-      font-size: 28px;
+    h1, h2, p, li { color: #000; }
+    #home {
+      padding: 150px 20px 80px;
+    }
+    #home h1 {
+      font-size: 36px;
       margin-bottom: 20px;
     }
-    section p {
-      font-size: 16px;
-      max-width: 700px;
+    #home p {
+      font-size: 18px;
+      max-width: 800px;
       margin: 0 auto;
-      line-height: 1.4;
+      line-height: 1.5;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h3 { color: #379777; margin-top: 0; }
+    .card p { color: #444; font-size: 14px; margin-bottom: 20px; }
+    .btn {
+      display: inline-block;
+      background-color: #379777;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover { background-color: #2b7b65; }
+    .btn.disabled {
+      background-color: #ccc;
+      pointer-events: none;
+    }
+    footer {
+      background-color: #379777;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+    .footer-icons a img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.2s;
+    }
+    .footer-icons a:hover img {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -105,13 +110,15 @@
 
   <nav>
     <ul>
-      <li><a href="#submit">Submit Research</a></li>
-      <li><a href="#publish">Publish</a></li>
-      <li><a href="#supporters">Wall of Supporters</a></li>
-      <li><a href="#about">About Us</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('submit')">Submit Research</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('publish')">Publish</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('supporters')">Wall of Supporters</a></li>
+      <li><a href="javascript:void(0)" onclick="showSection('about')">About Us</a></li>
     </ul>
   </nav>
 
+  <!-- Home Section -->
   <section id="home">
     <h1>Expert Research Editing for Academic Excellence</h1>
     <p>
@@ -120,40 +127,111 @@
     </p>
   </section>
 
+  <!-- Offers Section -->
   <section id="offers">
-    <h2>What We Offer</h2>
-    <ul>
-      <li>Professional editing and proofreading</li>
-      <li>Structure, grammar, and academic tone assistance</li>
-      <li>Feedback on clarity, logic, and flow</li>
-      <li>Quick turnaround for urgent submissions</li>
-      <li>Support for theses, proposals, essays, and journal articles</li>
+    <h2>Comprehensive academic support tailored to your needs</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Research Editing</h3>
+        <p>Enhance clarity, structure, and academic rigor of your research papers.</p>
+        <a href="javascript:void(0)" class="btn" onclick="showSection('research')">Learn More</a>
+      </div>
+      <div class="card">
+        <h3>Academic Consultation</h3>
+        <p>One-on-one consultation to receive expert feedback and guidance.</p>
+        <a href="#" class="btn disabled">Coming Soon</a>
+      </div>
+      <div class="card">
+        <h3>Enterprise</h3>
+        <p>Support for institutions and organizations seeking editing services.</p>
+        <a href="#" class="btn disabled">Coming Soon</a>
+      </div>
+      <div class="card">
+        <h3>Essay Publishing</h3>
+        <p>Platform for students and researchers to publish academic essays.</p>
+        <a href="javascript:void(0)" class="btn" onclick="showSection('publish')">Learn More</a>
+      </div>
+      <div class="card">
+        <h3>Newsletters</h3>
+        <p>Stay updated with research tips, trends, and academic insights.</p>
+        <a href="#" class="btn disabled">Coming Soon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Editing Page -->
+  <section id="research" style="display:none;">
+    <h2>Research Editing Services</h2>
+    <p>
+      Our expert editors enhance clarity, structure, and academic tone in your writing. Whether it’s a thesis,
+      paper, or essay, we ensure your research is polished and publication-ready.
+    </p>
+    <ul style="text-align:left; max-width:600px; margin:20px auto; padding:0;">
+      <li>Grammar and syntax corrections</li>
+      <li>Improved sentence structure and logic</li>
+      <li>Academic tone and vocabulary refinement</li>
+      <li>Formatting and citation consistency</li>
+      <li>Fast, professional turnaround</li>
     </ul>
+    <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
 
-  <section id="submit">
+  <!-- Placeholder Sections -->
+  <section id="submit" style="display:none;">
     <h2>Submit Research</h2>
-    <p>Upload your research paper or essay here.</p>
-    <!-- Upload form goes here -->
+    <p>[Form Coming Soon]</p>
+    <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
-
-  <section id="publish">
+  <section id="publish" style="display:none;">
     <h2>Publish</h2>
-    <p>Publish your ideas and research findings with us.</p>
+    <p>[Details Coming Soon]</p>
+    <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
-
-  <section id="supporters">
+  <section id="supporters" style="display:none;">
     <h2>Wall of Supporters</h2>
-    <p>Thank you to all who support our academic community.</p>
+    <p>[Support Form Coming Soon]</p>
+    <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
-
-  <section id="about">
+  <section id="about" style="display:none;">
     <h2>About Us</h2>
     <p>
       We are dedicated to empowering students by helping them refine and elevate their research
       to academic excellence through expert feedback and editorial services.
     </p>
+    <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
+
+  <footer>
+    <p>Connect with us</p>
+    <div class="footer-icons">
+      <a href="https://x.com/Learnologysa" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023.svg" alt="X logo">
+      </a>
+      <a href="mailto:ilearnologyy@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.svg" alt="Gmail logo">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function showSection(id, push=true) {
+      document.querySelectorAll("section").forEach(s => s.style.display = "none");
+      document.getElementById(id).style.display = "block";
+      if (id === "home") document.getElementById("offers").style.display = "block";
+      if (push) history.pushState({ section:id }, "", "#" + id);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.onpopstate = e => {
+      const sec = e.state?.section || "home";
+      showSection(sec, false);
+    };
+
+    window.onload = () => {
+      const hash = location.hash.replace("#", "") || "home";
+      showSection(hash, false);
+    };
+  </script>
 
 </body>
 </html>
