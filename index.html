@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Expert Research Editing</title>
+  <title>Learnologysa.org.sa</title>
+  <!-- Open Graph for link previews -->
+  <meta property="og:title" content="Learnologysa.org.sa" />
+  <meta property="og:description" content="Expert research editing for academic excellence." />
+  <meta property="og:url" content="https://Learnologysa.org.sa" />
+  <meta property="og:type" content="website" />
   <style>
     html { scroll-behavior: smooth; }
     body {
@@ -36,7 +41,17 @@
       padding: 80px 20px;
       text-align: center;
     }
-    h1, h2, p, li { color: #000; }
+    h1, h2, li { color: #000; }
+
+    /* Subtitle text style */
+    .sub-text {
+      color: #868a89;
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 10px auto;
+    }
+
     #home {
       padding: 150px 20px 80px;
     }
@@ -66,8 +81,8 @@
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-    .card h3 { color: #379777; margin-top: 0; }
-    .card p { color: #444; font-size: 14px; margin-bottom: 20px; }
+    .card h3 { color: #000000; margin-top: 0; }
+    .card p { margin-bottom: 20px; }
     .btn {
       display: inline-block;
       background-color: #379777;
@@ -104,6 +119,21 @@
     .footer-icons a:hover img {
       transform: scale(1.1);
     }
+
+    /* Footer extra sentence styling */
+    .footer-text {
+      color: #ffffff;
+      font-size: 16px;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    .footer-link {
+  color: #ffffff;        /* classic blue */
+  text-decoration: underline;
+  pointer-events: none;  /* makes it non-clickable */
+  cursor: default;
+}
+
   </style>
 </head>
 <body>
@@ -121,40 +151,39 @@
   <!-- Home Section -->
   <section id="home">
     <h1>Expert Research Editing for Academic Excellence</h1>
-    <p>
-      Professional editing services tailored for undergraduate and graduate students.
-      Enhance your research with our expert guidance across all academic fields.
-    </p>
+    <p class="sub-text">Professional editing services tailored for undergraduate and graduate students.</p>
+    <p class="sub-text">Enhance your research with our expert guidance across all academic fields.</p>
   </section>
 
   <!-- Offers Section -->
   <section id="offers">
-    <h2>Comprehensive academic support tailored to your needs</h2>
+    <h2>What Do We Offer?</h2>
+    <h3>Comprehensive academic support tailored to your needs</h3>
     <div class="card-container">
       <div class="card">
         <h3>Research Editing</h3>
-        <p>Enhance clarity, structure, and academic rigor of your research papers.</p>
+        <p class="sub-text">Professional editing to enhance clarity, structure, and academic rigor of your research papers.</p>
         <a href="javascript:void(0)" class="btn" onclick="showSection('research')">Learn More</a>
       </div>
       <div class="card">
         <h3>Academic Consultation</h3>
-        <p>One-on-one consultation to receive expert feedback and guidance.</p>
-        <a href="#" class="btn disabled">Coming Soon</a>
+        <p class="sub-text">One-on-one consultation sessions to discuss your research and receive expert guidance.</p>
+        <a href="javascript:void(0)" class="btn" onclick="showSection('research')">Learn More</a>
       </div>
       <div class="card">
         <h3>Enterprise</h3>
-        <p>Support for institutions and organizations seeking editing services.</p>
-        <a href="#" class="btn disabled">Coming Soon</a>
+        <p class="sub-text">Dedicated support for institutions and organizations seeking research editing services.</p>
+        <a href="javascript:void(0)" class="btn" onclick="showSection('research')">Learn More</a>
       </div>
       <div class="card">
         <h3>Essay Publishing</h3>
-        <p>Platform for students and researchers to publish academic essays.</p>
+        <p class="sub-text">Platform for students and researchers to publish and showcase their academic essays.</p>
         <a href="javascript:void(0)" class="btn" onclick="showSection('publish')">Learn More</a>
       </div>
       <div class="card">
         <h3>Newsletters</h3>
-        <p>Stay updated with research tips, trends, and academic insights.</p>
-        <a href="#" class="btn disabled">Coming Soon</a>
+        <p class="sub-text">Stay updated with the latest academic trends, research tips, and educational insights.</p>
+        <a href="javascript:void(0)" class="btn" onclick="showSection('research')">Learn More</a>
       </div>
     </div>
   </section>
@@ -162,10 +191,7 @@
   <!-- Research Editing Page -->
   <section id="research" style="display:none;">
     <h2>Research Editing Services</h2>
-    <p>
-      Our expert editors enhance clarity, structure, and academic tone in your writing. Whether it’s a thesis,
-      paper, or essay, we ensure your research is polished and publication-ready.
-    </p>
+    <p class="sub-text">Our expert editors enhance clarity, structure, and academic tone in your writing. Whether it’s a thesis, paper, or essay, we ensure your research is polished and publication-ready.</p>
     <ul style="text-align:left; max-width:600px; margin:20px auto; padding:0;">
       <li>Grammar and syntax corrections</li>
       <li>Improved sentence structure and logic</li>
@@ -179,25 +205,22 @@
   <!-- Placeholder Sections -->
   <section id="submit" style="display:none;">
     <h2>Submit Research</h2>
-    <p>[Form Coming Soon]</p>
+    <p class="sub-text">[Form Coming Soon]</p>
     <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
   <section id="publish" style="display:none;">
     <h2>Publish</h2>
-    <p>[Details Coming Soon]</p>
+    <p class="sub-text">[Details Coming Soon]</p>
     <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
   <section id="supporters" style="display:none;">
     <h2>Wall of Supporters</h2>
-    <p>[Support Form Coming Soon]</p>
+    <p class="sub-text">[Support Form Coming Soon]</p>
     <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
   <section id="about" style="display:none;">
     <h2>About Us</h2>
-    <p>
-      We are dedicated to empowering students by helping them refine and elevate their research
-      to academic excellence through expert feedback and editorial services.
-    </p>
+    <p class="sub-text">We are dedicated to empowering students by helping them refine and elevate their research to academic excellence through expert feedback and editorial services.</p>
     <a href="javascript:void(0)" class="btn" onclick="history.back()">← Back to Home</a>
   </section>
 
@@ -211,6 +234,12 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.svg" alt="Gmail logo">
       </a>
     </div>
+    <p class="footer-text">
+  <span class="footer-link">Term</span> |
+  <span class="footer-link">Privacy</span> |
+  © 2025 Learnology. All rights reserved.
+</p>
+
   </footer>
 
   <script>
